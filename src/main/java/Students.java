@@ -44,7 +44,11 @@ public class Students extends Connect implements Operations<Student> {
         String query = "select * from students";
         try(Connection conn = connect(); Statement statement = conn.createStatement(); ResultSet set = statement.executeQuery(query)){
             while(set.next()) {
-               student.add( ("birth_date")
+               student.add(new Student(
+                       set.getString("first_name"),
+                       set.getString("last_name"),
+                       set.getString("email"),
+                       set.getString("birth_date")
                ));
             }
 
