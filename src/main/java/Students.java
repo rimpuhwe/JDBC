@@ -51,7 +51,6 @@ public class Students extends Connect implements Operations<Student> {
                        set.getString("birth_date")
                ));
             }
-
         }
         catch (SQLException e) {
             System.out.println(e.getMessage());
