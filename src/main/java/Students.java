@@ -2,12 +2,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class Students extends Connect implements Operations<Student> {
 
 
     @Override
     public void create(Student item)  {
+       
         String query = "insert into students (first_name, last_name, email, birth_date) values(?,?,?,CAST(? AS DATE))";
         try(Connection conn = connect(); PreparedStatement ps = conn.prepareStatement(query)){
             ps.setString(2, item.getFirst_name());
