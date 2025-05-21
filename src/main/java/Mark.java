@@ -32,4 +32,13 @@ public class Mark {
     public void setMark(int mark) {
         this.mark = mark;
     }
+
+    @Override
+    public String toString() {
+        return "Mark{" +
+                "studentId=" + studentId +
+                ", courseId=" + courseId +
+                ", mark=" + mark +
+                '}';
+    }
 }

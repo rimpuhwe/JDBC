@@ -41,5 +41,13 @@ public class Student {
         return birth_date;
     }
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email='" + email + '\'' +
+                ", birth_date='" + birth_date + '\'' +
+                '}';
+    }
 }

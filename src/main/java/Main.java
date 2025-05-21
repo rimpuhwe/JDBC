@@ -88,12 +88,66 @@ public class Main {
                 break;
             }
             case 2: {
+                System.out.print("Do you want to proceed with the the details in entities (students/courses/marks) with id (y/n)?");
+                char option = scanner.next().toLowerCase().charAt(0);
+                scanner.nextLine();
+                if (option == 'y') {
+                    System.out.print("which entity do you like to proceed with? ");
+                    String entity = scanner.next();
+                    switch (entity) {
+                        case "students": {
+                            System.out.print("Enter student id: ");
+                            int student_id = scanner.nextInt();
+                            students.read(student_id);
+                            break;
+                        }
+                        case "courses": {
+                            System.out.print("Enter course id: ");
+                            int course_id = scanner.nextInt();
+                            students.read(course_id);
+                            break;
+                        }
+                        case "marks": {
+                            System.out.print("Enter either student id or course id: ");
+                            int id = scanner.nextInt();
+                            students.read(id);
+                            break;
+                        }
+                    }
+
+                }
+                else if (option == 'n') {
+                    System.out.print("you want to read all data from an entity in our database. which table do we go with: ");
+                    String table = scanner.nextLine();
+                    switch (table) {
+                        case "students": {
+                            students.readAll().forEach(stud -> System.out.println(stud.toString()));
+                            break;
+                        }
+                        case "courses": {
+                            courses.readAll().forEach(course -> System.out.println(course.toString()));
+                            break;
+
+                        }
+                        case "marks": {
+                            marks.readAll().forEach(mark -> System.out.println(mark.toString()));
+                            break;
+
+                        }
+                    }
+
+                }
+                else {
+                    System.out.println("invalid option");
+                }
+                break;
 
             }
             case 3: {
 
             }
             case 4: {
+                System.out.println("");
 
             }
             case 5:
