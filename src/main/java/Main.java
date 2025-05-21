@@ -147,8 +147,36 @@ public class Main {
 
             }
             case 4: {
-                System.out.println("");
+                System.out.println("you are no longer in need of some data ? let's help to delete the unwanted ones");
+                Thread.sleep(1000);
+                System.out.print("which entity do we go with: ");
+                String entity = scanner.next();
+                scanner.nextLine();
+                switch (entity) {
+                    case "students": {
+                        System.out.print("Enter student id: ");
+                        int student_id = scanner.nextInt();
+                        students.delete(student_id);
+                        System.out.println("The student has been deleted successfully!");
+                        break;
+                    }
+                    case "courses": {
+                        System.out.print("Enter course id: ");
+                        int course_id = scanner.nextInt();
+                        courses.delete(course_id);
+                        System.out.println("The course has been deleted successfully!");
+                        break;
 
+                    }
+                    case "marks": {
+                        System.out.print("Enter either student_id ,course_id or marks: ");
+                        int deleted = scanner.nextInt();
+                        marks.delete(deleted);
+                        System.out.println("The marks has been deleted successfully!");
+                        break;
+                    }
+                }
+                break;
             }
             case 5:
                 System.out.println("Thank you for using our system");
